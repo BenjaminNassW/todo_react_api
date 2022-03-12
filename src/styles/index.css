@@ -1,4 +1,27 @@
+body{
+    background: rgb(250, 210, 157);
+    margin-left: 300px;
+    border-style: hidden;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+input{
+    background: antiquewhite;
+    border-style: hidden;
+    min-height: 25px;
+    min-width: 400px;
+}
 
+p{
+    text-align: start;
+    background: antiquewhite;
+    margin-top: 0;
+    margin-bottom: 0;
+    min-width: 400px;
+    min-height: 25px;
+    vertical-align: middle;
+    padding: 2px;
+}
 /* 
 
     You can write your own styles here...
