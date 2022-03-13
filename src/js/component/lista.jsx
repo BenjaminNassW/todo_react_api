@@ -1,29 +1,12 @@
 import React, { useState } from "react";
+import MyControlledInput from "./inputValue.jsx";
 
 const List = () => {
-	const [arreglo, setArreglo] = useState([]);
+	const [arreglo, setArreglo] = useState();
+	var tarea = "";
 	return (
 		<div id="primerDiv">
 			<h1>todos</h1>
-			<div id="segDiv">
-				<input
-					type="text"
-					placeholder="Ingrese tarea"
-					onChange={() => {}}
-				/>
-				<button
-					type="submit"
-					onClick={() => {
-						return (
-							<div>
-								<p>{arreglo[0]}</p>
-								<button>X</button>
-							</div>
-						);
-					}}>
-					Submit
-				</button>
-			</div>
 		</div>
 	);
 };
