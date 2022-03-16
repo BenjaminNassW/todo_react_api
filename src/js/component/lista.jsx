@@ -1,12 +1,37 @@
-import React, { useState } from "react";
-import MyControlledInput from "./inputValue.jsx";
+import React, { useState, useEffect } from "react";
 
 const List = () => {
-	const [arreglo, setArreglo] = useState();
-	var tarea = "";
+	const [lista, setLista] = useState([]);
+	const [tarea, setTarea] = useState("");
+	useEffect(() => {
+		console.log(lista);
+	}, [lista]);
 	return (
-		<div id="primerDiv">
-			<h1>todos</h1>
+		<div>
+			<input
+				placeholder="ingrese tarea"
+				onChange={(e) => {
+					setTarea(e.target.value);
+				}}></input>
+			<button
+				onClick={() => {
+					setLista([...lista, tarea]);
+				}}>
+				agregar tarea
+			</button>
+			<h2>
+				{lista.map((tarea, i) => {
+					return (
+						<div key={i} className="d-flex">
+							<p key={i}>{tarea}</p>
+							<button
+								onClick={() =>
+									setList(lista.splice(i, lista.length - i))
+								}></button>
+						</div>
+					);
+				})}
+			</h2>
 		</div>
 	);
 };
