@@ -5,6 +5,7 @@ const List = () => {
 	const [tarea, setTarea] = useState("");
 	useEffect(() => {
 		console.log(lista);
+
 	}, [lista]);
 	return (
 		<div>
@@ -33,6 +34,7 @@ const List = () => {
 					);
 				})}
 			</h2>
+			<p>{lista.length} tareas en total</p>
 		</div>
 	);
 };
