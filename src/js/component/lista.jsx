@@ -25,9 +25,10 @@ const List = () => {
 						<div key={i} className="d-flex">
 							<p key={i}>{tarea}</p>
 							<button
-								onClick={() =>
-									setList(lista.splice(i, lista.length - i))
-								}></button>
+								onClick={() => {
+									lista.splice(i, 1);
+									setLista(lista);
+								}}></button>
 						</div>
 					);
 				})}
