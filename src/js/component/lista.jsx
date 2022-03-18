@@ -3,13 +3,11 @@ import React, { useState, useEffect } from "react";
 const List = () => {
 	const [lista, setLista] = useState([]);
 	const [tarea, setTarea] = useState("");
-	useEffect(() => {
-		console.log(lista);
 
-	}, [lista]);
 	return (
 		<div>
 			<input
+				value={tarea}
 				placeholder="ingrese tarea"
 				onChange={(e) => {
 					setTarea(e.target.value);
@@ -17,6 +15,7 @@ const List = () => {
 			<button
 				onClick={() => {
 					setLista([...lista, tarea]);
+					setTarea("");
 				}}>
 				agregar tarea
 			</button>
@@ -27,14 +26,25 @@ const List = () => {
 							<p key={i}>{tarea}</p>
 							<button
 								onClick={() => {
-									lista.splice(i, 1);
-									setLista(lista);
-								}}></button>
+									const result = lista.filter(checkTarea);
+
+									function checkTarea(value, index) {
+										return index !== i;
+									}
+									setLista(result);
+								}}>
+								X
+							</button>
 						</div>
 					);
 				})}
 			</h2>
-			<p>{lista.length} tareas en total</p>
+
+			{lista.length == 0 ? (
+				""
+			) : (
+				<p>{lista.length + " tareas en total"}</p>
+			)}
 		</div>
 	);
 };

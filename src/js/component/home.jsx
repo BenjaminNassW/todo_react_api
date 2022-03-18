@@ -8,6 +8,7 @@ import "../../styles/index.css";
 const Home = () => {
 	return (
 		<div>
+			<h1>To-do List</h1>
 			<List />
 		</div>
 	);
