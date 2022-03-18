@@ -22,9 +22,11 @@ const List = () => {
 			<h2>
 				{lista.map((tarea, i) => {
 					return (
-						<div key={i} className="d-flex">
+						<div id="borrar" key={i} className="d-flex mydivouter">
 							<p key={i}>{tarea}</p>
 							<button
+								className="mybuttonoverlap"
+								id="equis"
 								onClick={() => {
 									const result = lista.filter(checkTarea);
 
